@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (!user) {
     return res.status(404).json({
       status: "error",
-      message: "User not found",
+      message: "user not found",
     });
   }
 
@@ -17,6 +17,6 @@ module.exports = async (req, res) => {
 
   return res.json({
     status: "success",
-    message: "refresh token deleted successfully",
+    message: "refresh token deleted",
   });
 };
