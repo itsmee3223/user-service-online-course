@@ -38,6 +38,7 @@ module.exports = async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     profession: req.body.profession,
+    avatar: req.body.avatar,
   };
 
   const createdUser = await User.create(data);
