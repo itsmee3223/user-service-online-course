@@ -1,7 +1,5 @@
 require("dotenv").config();
 
-const pg = require("pg");
-
 const { DB_NAME, DB_PASSWORD, DB_USERNAME, DB_HOSTNAME, DB_PORT } = process.env;
 
 module.exports = {
@@ -11,8 +9,8 @@ module.exports = {
     database: DB_NAME,
     host: DB_HOSTNAME,
     port: DB_PORT,
-    dialect: "postgres",
-    dialectModule: pg,
+    dialect: "mysql",
+    
   },
   test: {
     username: DB_USERNAME,
@@ -20,8 +18,8 @@ module.exports = {
     database: DB_NAME,
     host: DB_HOSTNAME,
     port: DB_PORT,
-    dialect: "postgres",
-    dialectModule: pg,
+    dialect: "mysql",
+    
   },
   production: {
     username: DB_USERNAME,
@@ -29,13 +27,6 @@ module.exports = {
     database: DB_NAME,
     host: DB_HOSTNAME,
     port: DB_PORT,
-    dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true, // This will help you. But you will see nwe error
-        rejectUnauthorized: false, // This line will fix new error
-      },
-    },
-    dialectModule: pg,
+    dialect: "mysql",
   },
 };
